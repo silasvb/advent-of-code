@@ -1,14 +1,12 @@
 from functools import wraps
-import cProfile
-import pstats
+import time
 
 def timeit(func):
     @wraps(func)
     def wrapper(*args, **kwargs):    
-        profiler = cProfile.Profile()
-        profiler.enable()
+        start = time.perf_counter()
         result = func(*args, **kwargs)
-        profiler.disable()
-    
+        end = time.perf_counter()
+        print(f"{func.__name__} took {end - start:.6f} seconds")
         return result
     return wrapper

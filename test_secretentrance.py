@@ -79,7 +79,7 @@ def readlines(filename: str):
         return [line.strip() for line in f.readlines()]
     
 if __name__ == "__main__":
-    instructions = readlines("inputs/day1-1.txt")
+    instructions = readlines("inputs/day1-claire.txt")
     
     print("Solving Day 1 (Part 1)...")
     
